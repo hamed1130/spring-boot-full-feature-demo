@@ -55,7 +55,7 @@ public class DepartmentController {
 
     // update a department by id, and sending department to be updated
     @PutMapping("/department/{id}")
-    public Department updateDepartmentById(@RequestBody Department department, @PathVariable("id") Long departmentId) {
+    public Department updateDepartmentById(@RequestBody Department department, @PathVariable("id") Long departmentId) throws DepartmentNotFoundByIDException {
         logger.info("Incoming PUT, updating department by id");
         return departmentService.updateDepartmentById(departmentId, department);
     }

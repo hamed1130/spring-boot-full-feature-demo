@@ -8,8 +8,7 @@ import jakarta.validation.constraints.*;
 
 @Entity
 public class Department {
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long departmentId;
     @NotBlank(message = "Department name is missing, please add it.") // used for validation, means this field have always to be present in the incoming request
     // other validations avail:

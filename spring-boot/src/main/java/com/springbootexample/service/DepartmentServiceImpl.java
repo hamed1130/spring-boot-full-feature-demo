@@ -39,7 +39,7 @@ public class DepartmentServiceImpl implements IDepartmentService {
 
     @Override
     public void deleteDepartmentById(Long departmentId) throws DepartmentNotFoundByIDException {
-        // first check if the dep id exists
+        // first check if the dep id exists, then delete
         Optional<Department> result = departmentRepository.findById(departmentId);
         if (! result.isPresent()) {
             throw new DepartmentNotFoundByIDException(String.format("Department ID '%s' not found.", departmentId));
@@ -48,12 +48,13 @@ public class DepartmentServiceImpl implements IDepartmentService {
     }
 
     @Override
-    public Department updateDepartmentById(Long departmentId, Department department) {
+    public Department updateDepartmentById(Long departmentId, Department department) throws DepartmentNotFoundByIDException {
+        // first check if the dep id exists, then proceed with updating it
         Department departmentDB;
         try {
             departmentDB = departmentRepository.findById(departmentId).get();
         } catch (NoSuchElementException e) {
-            return null;
+            throw new DepartmentNotFoundByIDException(String.format("Department ID '%s' not found.", departmentId));
         }
 
         if (Objects.nonNull(department.getDepartmentName()) && ! department.getDepartmentName().equals("")) {
