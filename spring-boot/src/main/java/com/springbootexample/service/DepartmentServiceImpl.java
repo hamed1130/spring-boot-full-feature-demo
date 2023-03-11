@@ -13,7 +13,7 @@ import java.util.Objects;
 import java.util.Optional;
 
 @Service
-public class DepartmentServiceImpl implements IDepartmentService {
+public class DepartmentServiceImpl implements DepartmentService {
     @Autowired
     private DepartmentRepository departmentRepository;
 

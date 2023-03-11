@@ -5,8 +5,12 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.validation.constraints.*;
+import lombok.Builder;
+import org.springframework.stereotype.Component;
 
 @Entity
+@Builder
+//@Component
 public class Department {
     @Id @GeneratedValue(strategy = GenerationType.AUTO)
     private long departmentId;

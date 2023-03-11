@@ -11,7 +11,7 @@ import lombok.*;
 @Data // for Lombok, that includes: @Getter @Setter @RequiredArgsConstructor @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@Builder // for Builder pattern
+@Builder // for Builder pattern, which is used when we have multiple properties and can use it when creating objects, instead of using constructor or setter methods
 public class DepartmentUsingLombok {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

@@ -3,7 +3,7 @@ package com.springbootexample.controller;
 import com.springbootexample.entity.Department;
 import com.springbootexample.exception.DepartmentNotFoundByIDException;
 import com.springbootexample.exception.DepartmentNotFoundByNameException;
-import com.springbootexample.service.IDepartmentService;
+import com.springbootexample.service.DepartmentService;
 import jakarta.validation.Valid;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -16,7 +16,7 @@ import java.util.List;
 public class DepartmentController {
     // di for service component
     @Autowired
-    private IDepartmentService departmentService;
+    private DepartmentService departmentService;
 
     // logging functionality
     private final Logger logger = LoggerFactory.getLogger(DepartmentController.class);

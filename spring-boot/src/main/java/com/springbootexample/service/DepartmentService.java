@@ -6,7 +6,7 @@ import com.springbootexample.exception.DepartmentNotFoundByNameException;
 
 import java.util.List;
 
-public interface IDepartmentService {
+public interface DepartmentService {
     Department saveDepartment(Department department);
 
     List<Department> getDepartments();
