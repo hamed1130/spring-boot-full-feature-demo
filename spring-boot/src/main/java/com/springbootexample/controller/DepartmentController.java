@@ -40,6 +40,7 @@ public class DepartmentController {
     // get a department by id
     @GetMapping("/department/{id}")
     //@RequestMapping("{id}")
+    //public Department getDepartmentById(@PathVariable("id") @Pattern(regexp = "^[0-9]*$", message = "only digits") String departmentId) throws DepartmentNotFoundByIDException {
     public Department getDepartmentById(@PathVariable("id") Long departmentId) throws DepartmentNotFoundByIDException {
         logger.info("Incoming GET, get department by id: " + departmentId);
         return departmentService.getDepartmentById(departmentId);
