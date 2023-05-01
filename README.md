@@ -26,6 +26,9 @@ Once the above contents with Spring are explored, then Auto Configuration which 
 - Configurations
 - Mapping entities with database objects (tables and columns)
 - Defining relationships (One-to-One, One-to-Many, Many-to-One, Many-to-Many)
+- Uni and Bi-directional relationships
+- Cascading
+- Fetch Types (Eager and Lazy fetching)
 - Paging and sorting
 - Unit testing the repository layer
 - Hibernate validations
